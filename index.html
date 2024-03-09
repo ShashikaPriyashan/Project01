@@ -3,20 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conversa Website</title>
+  <title>WhatsApp Website</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <!-- Custom CSS -->
   <style>
     /* Add your custom styles here */
- 
+    /* To make it similar to WhatsApp website, you can inspect the WhatsApp website and apply similar styles */
+
+    body.light-mode {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    body.dark-mode {
+      background-color: #1c1e21;
+      color: #ffffff;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+      color: #ffffff;
+    }
+
+    .navbar-custom {
+      background-color: #722EF9;
+    }
+
+    .navbar-custom .navbar-nav .nav-link {
+      color: #ffffff;
+    }
+
+    .screenshot-container {
+      text-align: center;
+      padding: 100px 0;
+    }
+
+    .screenshot-container img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Custom styles for the dark/light mode button */
+    .mode-toggle {
+      position: fixed;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      font-size: 24px;
+      transition: transform 0.3s ease, font-size 0.3s ease, border-radius 0.3s ease;
+      border-radius: 10px; /* Rounded square */
+      padding: 10px; /* Padding for better appearance */
+    }
+
+    .mode-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      .mode-toggle {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+      }
+    }
   </style>
 </head>
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Conversa</a>
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    <a class="navbar-brand" href="#">WhatsApp</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -32,7 +95,7 @@
           <a class="nav-link" href="#">Security</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Conversa Web</a>
+          <a class="nav-link" href="#">WhatsApp Web</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Business</a>
@@ -43,20 +106,43 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Support</a>
         </li>
+        <li class="nav-item">
+          <button id="mode-toggle" class="btn btn-sm btn-secondary mode-toggle"><i class="fas fa-sun"></i></button>
+        </li>
       </ul>
     </div>
   </nav>
+
+  <!-- Feature Section -->
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="text-center">Centered Screenshot</h2>
+        <p class="text-center">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+        <div class="text-center mt-4">
+          <a href="#" class="btn btn-primary mr-2">Primary Button</a>
+          <a href="#" class="btn btn-secondary">Secondary Button</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screenshot Section -->
+  <div class="screenshot-container">
+    <img src="Assests/tg.png" alt="WhatsApp Screenshot">
+  </div>
 
   <!-- Main Content -->
   <div class="container mt-4">
     <div class="row">
       <div class="col-md-6">
-        <h1>Welcome to Conversa</h1>
-        <p>Conversa is a fast, secure, and reliable messaging app. Keep in touch with your friends and family for free.</p>
-        <button class="btn btn-primary">Get Conversa</button>
+        <h2>About WhatsApp</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec nulla ut est posuere fermentum. Curabitur malesuada, orci in ultricies fermentum, felis nisi dictum libero, id posuere mi arcu sit amet ligula.</p>
       </div>
       <div class="col-md-6">
-        <!-- You can add an image or any additional content here -->
+        <h2>Contact Us</h2>
+        <p>If you have any questions or feedback, feel free to contact us.</p>
+        <a href="#" class="btn btn-primary">Contact Us</a>
       </div>
     </div>
   </div>
@@ -65,5 +151,25 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Font Awesome -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+  <!-- Custom JavaScript for Mode Toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const modeToggle = document.getElementById('mode-toggle');
+      const body = document.body;
+
+      modeToggle.addEventListener('click', function () {
+        body.classList.toggle('light-mode');
+        body.classList.toggle('dark-mode');
+        if (body.classList.contains('light-mode')) {
+          modeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        } else {
+          modeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
