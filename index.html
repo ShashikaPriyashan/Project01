@@ -14,7 +14,6 @@
     /* To make it similar to Conversa website, you can inspect the Conversa website and apply similar styles */
 
     body.light-mode {
-      background-color: #ffffff;
       color: #000000;
     }
 
@@ -23,7 +22,6 @@
     }
 
     body.dark-mode {
-      background-color: #1c1e21;
       color: #ffffff;
     }
 
@@ -44,7 +42,11 @@
       align-items: center;
       justify-content: center;
       height: calc(100vh - 56px); /* Adjust for navbar height */
-      background-color: #f8f9fa;
+      background-color: rgba(0, 0, 0, 0.5); /* Fallback color */
+      background-image: url('Assests/1.jpg'); /* Add your background image URL */
+      background-size: cover;
+      background-position: center;
+      color: #ffffff; /* Default text color */
     }
 
     .hero-signup-content {
@@ -54,15 +56,9 @@
     .custom-card {
       margin-top: 20px;
     }
-
-    @media (max-width: 768px) {
-      .mode-toggle {
-        display: none; /* Hide the dark/light mode button on small screens */
-      }
-    }
   </style>
 </head>
-<body>
+<body class="dark-mode">
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
