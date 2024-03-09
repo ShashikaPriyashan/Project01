@@ -39,38 +39,25 @@
       color: #ffffff;
     }
 
-    .screenshot-container {
+    .hero-signup {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: calc(100vh - 56px); /* Adjust for navbar height */
+      background-color: #f8f9fa;
+    }
+
+    .hero-signup-content {
       text-align: center;
-      padding: 100px 0;
     }
 
-    .screenshot-container img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    /* Custom styles for the dark/light mode button */
-    .mode-toggle {
-      position: fixed;
-      top: 50%;
-      right: 20px;
-      transform: translateY(-50%);
-      font-size: 24px;
-      transition: transform 0.3s ease, font-size 0.3s ease, border-radius 0.3s ease;
-      border-radius: 10px; /* Rounded square */
-      padding: 10px; /* Padding for better appearance */
-    }
-
-    .mode-toggle:hover {
-      transform: scale(1.1);
+    .custom-card {
+      margin-top: 20px;
     }
 
     @media (max-width: 768px) {
       .mode-toggle {
-        position: absolute;
-        top: 50%;
-        right: 10px;
-        transform: translateY(-50%);
+        display: none; /* Hide the dark/light mode button on small screens */
       }
     }
   </style>
@@ -106,43 +93,59 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Support</a>
         </li>
-        <li class="nav-item">
-          <button id="mode-toggle" class="btn btn-sm btn-secondary mode-toggle"><i class="fas fa-sun"></i></button>
-        </li>
       </ul>
     </div>
   </nav>
 
-  <!-- Feature Section -->
-  <div class="container mt-4">
-    <div class="row">
-      <div class="col-lg-12">
-        <h2 class="text-center">Centered Screenshot</h2>
-        <p class="text-center">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-        <div class="text-center mt-4">
-          <a href="#" class="btn btn-primary mr-2">Primary Button</a>
-          <a href="#" class="btn btn-secondary">Secondary Button</a>
+  <!-- Hero Sign-up Section -->
+  <div class="hero-signup">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="hero-signup-content">
+            <h2>Sign up for Conversa</h2>
+            <p>Stay in touch with friends and family, anytime and anywhere.</p>
+            <form>
+              <div class="form-group">
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              </div>
+              <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Screenshot Section -->
-  <div class="screenshot-container">
-    <img src="Assests/tg.png" alt="Conversa Screenshot">
-  </div>
-
-  <!-- Main Content -->
+  <!-- Custom Cards -->
   <div class="container mt-4">
     <div class="row">
-      <div class="col-md-6">
-        <h2>About Conversa</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec nulla ut est posuere fermentum. Curabitur malesuada, orci in ultricies fermentum, felis nisi dictum libero, id posuere mi arcu sit amet ligula.</p>
+      <div class="col-md-4">
+        <div class="card custom-card">
+          <div class="card-body">
+            <h5 class="card-title">Custom Card 1</h5>
+            <p class="card-text">This is a custom card with some example text content.</p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
       </div>
-      <div class="col-md-6">
-        <h2>Contact Us</h2>
-        <p>If you have any questions or feedback, feel free to contact us.</p>
-        <a href="#" class="btn btn-primary">Contact Us</a>
+      <div class="col-md-4">
+        <div class="card custom-card">
+          <div class="card-body">
+            <h5 class="card-title">Custom Card 2</h5>
+            <p class="card-text">This is another custom card with some example text content.</p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card custom-card">
+          <div class="card-body">
+            <h5 class="card-title">Custom Card 3</h5>
+            <p class="card-text">This is a third custom card with some example text content.</p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -153,23 +156,5 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <!-- Font Awesome -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-
-  <!-- Custom JavaScript for Mode Toggle -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const modeToggle = document.getElementById('mode-toggle');
-      const body = document.body;
-
-      modeToggle.addEventListener('click', function () {
-        body.classList.toggle('light-mode');
-        body.classList.toggle('dark-mode');
-        if (body.classList.contains('light-mode')) {
-          modeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        } else {
-          modeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-        }
-      });
-    });
-  </script>
 </body>
 </html>
