@@ -13,12 +13,20 @@
     /* Add your custom styles here */
     /* To make it similar to Conversa website, you can inspect the Conversa website and apply similar styles */
 
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
     body.light-mode {
       color: #000000;
     }
 
-    .navbar-light .navbar-nav .nav-link {
+    .navbar-light .navbar-nav .nav-link,
+    footer a {
       color: rgba(0, 0, 0, 0.5);
+      text-decoration: line-through; /* Strikethrough effect */
     }
 
     body.dark-mode {
@@ -35,26 +43,25 @@
 
     .navbar-custom .navbar-nav .nav-link {
       color: #ffffff;
-    }
-
-    .hero-signup {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: calc(100vh - 56px); /* Adjust for navbar height */
-      background-color: rgba(0, 0, 0, 0.5); /* Fallback color */
-      background-image: url('Assests/1.jpg'); /* Add your background image URL */
-      background-size: cover;
-      background-position: center;
-      color: #ffffff; /* Default text color */
-    }
-
-    .hero-signup-content {
-      text-align: center;
+      text-decoration: line-through; /* Strikethrough effect */
     }
 
     .custom-card {
       margin-top: 20px;
+    }
+
+    footer {
+      background-color: #222;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: auto; /* Push footer to bottom */
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: line-through; /* Strikethrough effect */
+      margin: 0 10px;
     }
   </style>
 </head>
@@ -93,58 +100,34 @@
     </div>
   </nav>
 
-  <!-- Hero Sign-up Section -->
-  <div class="hero-signup">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-          <div class="hero-signup-content">
-            <h2>Sign up for Our News letter</h2>
-            <p>Stay in touch with friends and family, anytime and anywhere.</p>
-            <form>
-              <div class="form-group">
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-              </div>
-              <button type="submit" class="btn btn-primary">Sign Up</button>
-            </form>
-          </div>
-        </div>
+  <!-- Content -->
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>Welcome to Conversa</h1>
+        <p>Stay connected with your friends and family</p>
+        <p>Coming Soon...</p> <!-- Added Coming Soon message -->
       </div>
     </div>
   </div>
 
-  <!-- Custom Cards -->
-  <div class="container mt-4">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card custom-card">
-          <div class="card-body">
-            <h5 class="card-title">Custom Card 1</h5>
-            <p class="card-text">This is a custom card with some example text content.</p>
-            <a href="#" class="btn btn-primary">Learn More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card custom-card">
-          <div class="card-body">
-            <h5 class="card-title">Custom Card 2</h5>
-            <p class="card-text">This is another custom card with some example text content.</p>
-            <a href="#" class="btn btn-primary">Learn More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card custom-card">
-          <div class="card-body">
-            <h5 class="card-title">Custom Card 3</h5>
-            <p class="card-text">This is a third custom card with some example text content.</p>
-            <a href="#" class="btn btn-primary">Learn More</a>
-          </div>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>© 2024 Conversa. All Rights Reserved.</p>
+          <p>
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cookie Policy</a>
+            <a href="#">FAQ</a>
+            <!-- Add more links as needed -->
+          </p>
         </div>
       </div>
     </div>
-  </div>
+  </footer>
 
   <!-- Bootstrap JS and dependencies -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -152,5 +135,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <!-- Font Awesome -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
 </body>
 </html>
